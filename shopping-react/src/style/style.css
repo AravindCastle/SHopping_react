@@ -1,0 +1,656 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+    scrollbar-width: none;
+    /* Disables scrollbar but keeps scrolling */
+}
+
+/* Override Bulma's primary color */
+:root {
+    --primary: #ffffff;
+    --bulma-navbar-dropdown-background-color: var(--primary);
+    --bulma-scheme-main: var(--primary);
+    --bulma-background: var(--primary);
+    --bulma-border: var(--primary-text-color);
+    --bulma-navbar-item-color: var(--primary-text-color);
+    --bulma-link-text: var(--primary-text-color);
+    --sub-text-color: #545454;
+    --primary-text-color: rgb(131 94 2);
+    --primary-text-color-less-opac: rgb(131, 94, 2, 0.5);
+
+    --button-bg-color: #d7d5d56b;
+    --bulma-text-strong: var(--primary-text-color);
+    --bulma-scheme-main-bis: #835e02;
+    --bulma-scheme-h: 42.79;
+    --bulma-scheme-s: 96.99%;
+    --bulma-border-l: 26.08%;
+    --bulma-link-h: 42.79;
+    --bulma-link-s: 96.99%;
+    --bulma-link-l: 26.08%;
+
+    --bulma-text: var(--sub-text-color);
+
+
+    /* Change to your desired color */
+    /* Set your custom primary color */
+}
+
+.button {
+    background-color: var(--primary);
+}
+
+/* Alternatively, target specific classes */
+.has-background-primary {
+    background-color: var(--primary) !important;
+    /* Override background-primary */
+}
+
+.navbar-link {
+    background-color: var(--primary);
+    color: var(--primary-text-color) !important;
+}
+
+.has-text-primary {
+    color: var(--primary-text-color) !important;
+    /* Override text-primary */
+}
+
+.navbar {
+    background-color: var(--primary) !important;
+    box-shadow: palegoldenrod 2px 3px 7px -2px;
+    /* Navbar primary color */
+}
+
+
+.navbar-item {
+    color: var(--primary-text-color) !important;
+    cursor: pointer;
+}
+
+.navbar-dropdown a.navbar-item:not(.is-active, .is-selected) {
+    background-color: var(--primary);
+}
+
+.navbar-dropdown {
+    background-color: var(--primary);
+}
+
+.navbar-dropdown:hover {
+    transition: opacity 1s ease-in-out;
+
+}
+
+.navbar-link:not(.is-arrowless):after {
+    border-color: var(--primary-text-color) !important;
+}
+
+.navbar-item:hover {
+    background-color: var(--bulma-border) !important;
+    color: var(--bulma-background) !important;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--primary-text-color) !important;
+    /* Replace with your desired base color */
+}
+
+.hero.is-primary {
+    background-image: url('../assets/load.webp');
+    /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--primary);
+    /* Ensure text is visible */
+}
+
+#hero-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: var(--primary) !important;
+}
+
+.slider-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-images img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider-images img.active {
+    opacity: 1;
+}
+
+.box-item-image img {
+    border-radius: 0.75rem;
+}
+
+
+.bread-slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Center the slider horizontally */
+    align-items: center;
+    /* Optional: Center the content vertically (if needed) */
+    padding: 1rem;
+    background-color: white;
+    overflow: hidden;
+    margin-top: 3.25rem;
+    /* Hide overflow on larger screens */
+}
+
+.slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* For smooth snapping to each image */
+    gap: 3rem;
+}
+
+.slider-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-color: var(--primary);
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    box-shadow: palegoldenrod 2px 3px 7px -2px;
+    /* Align each item to the start */
+}
+
+.slider-item img {
+    width: 150px;
+    /* Set width for the images */
+    height: 150px;
+    /* Set height for the images */
+    object-fit: fill;
+    /* Maintain aspect ratio while filling the container */
+    border-radius: 5rem;
+    /* Optional: add border-radius to make images rounded */
+}
+
+/* Optional: Scrollbar styles */
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .slider-container {
+        gap: 10px;
+    }
+
+    .navbar-end {
+        display: none !important;
+    }
+
+
+    .slider-item img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-image {
+        width: 100%;
+        max-width: 315px;
+        max-height: 570px;
+        border-radius: 8px;
+    }
+
+    .filter-drawer {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 80%;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        /* Ensure content flows top to bottom */
+        overflow-y: auto;
+        z-index: 50;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #closeFilterDrawer {
+        float: right;
+    }
+}
+
+
+
+
+
+
+
+/* Slider container */
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Product slider */
+.product-slider {
+    display: flex;
+    flex-wrap: wrap;
+    /* Enable wrapping */
+    gap: 10px;
+    /* Add spacing between items */
+    justify-content: center;
+    /* Center align items */
+    overflow-x: auto;
+    width: 100%;
+}
+
+
+.product-slide {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    text-align: center;
+
+}
+
+.product-image {
+    width: 100%;
+
+    max-height: 570px;
+    border-radius: 8px;
+}
+
+.product-name {
+    color: var(--sub-text-color);
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    width: 100%;
+    line-height: 1.5em;
+    height: 1.2em;
+    overflow: hidden;
+    text-align: center;
+}
+
+.og-price {
+    -webkit-text-decoration: line-through;
+    text-decoration: line-through;
+    color: maroon;
+}
+
+.sell-price {}
+
+.product-mask {
+    position: relative;
+    cursor: pointer;
+}
+
+.product-mask .bottom-right {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 0.8rem;
+
+    background-color: #fff;
+    padding: 5px 15px 10px 15px;
+    opacity: 0.7;
+    border-top-left-radius: 5px;
+}
+
+.product-mask .top-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 0.8rem;
+
+    background-color: #fff;
+    padding: 5px 15px 5px 15px;
+    opacity: 0.7;
+    border-bottom-left-radius: 5px;
+}
+
+.product-mask .bottom-left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 0.8rem;
+
+    background-color: #fff;
+    padding: 5px 15px 10px 15px;
+    opacity: 0.7;
+    border-top-right-radius: 5px;
+}
+
+.product-mask .top-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 0.8rem;
+
+    background-color: #fff;
+    padding: 5px 15px 5px 15px;
+    opacity: 0.7;
+    border-bottom-right-radius: 5px;
+}
+
+
+.price-detail {
+    font-style: inherit;
+    font-weight: inherit;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 13px;
+}
+
+
+
+/* Navigation arrows */
+.slider-nav {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+
+.cart-button1 {
+    background: #000000ad;
+    height: 2.4rem;
+    text-align: center;
+    line-height: 2.4rem;
+    font-size: 0.7rem;
+}
+
+
+.primary-button:hover {
+    background: var(--primary-text-color);
+    color: white;
+    transition: 300ms ease-in;
+}
+
+.primary-button {
+    height: 2.4rem;
+    text-align: center;
+    line-height: 2.4rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    border: 1px solid var(--primary-text-color);
+    cursor: pointer;
+    color: var(--bulma-border);
+
+}
+
+.view-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.view-all .primary-button {
+    padding: 2px 20px 0px 20px;
+    font-size: 1rem;
+    line-height: 2rem;
+    background: var(--primary-text-color);
+    color: white;
+}
+
+.strike {
+    -webkit-text-decoration: line-through;
+    text-decoration: line-through;
+}
+
+
+
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    cursor: pointer;
+    /* Optional: Rounded corners */
+}
+
+.card-image img {
+    object-fit: cover;
+    /* Ensure the image covers the area */
+    height: 100%;
+    /* Ensure full height of the image container */
+    width: 100%;
+    border-radius: 0px !important;
+    /* Ensure full width of the image container */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    /* Center text horizontally */
+    align-items: center;
+    /* Center text vertically */
+    color: white;
+    /* White text for contrast */
+    text-align: center;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.category-card:hover .card-overlay {
+    background-color: rgba(0, 0, 0, 0.398);
+    transition: background-color 1s ease;
+    /* Darker overlay on hover */
+}
+
+
+.footer .title,
+.footer p,
+.footer a {
+    color: white;
+
+}
+
+
+
+.nav-bar-next-item {
+    margin-top: 3.25rem;
+    padding: 2rem 0 2rem 0
+}
+
+/*product list css*/
+/* Optional: Style the filter content */
+.filter-content {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.filter-content.is-hidden {
+    display: none;
+    /* Hide the content when collapsed */
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.filter-header .toggle-section {
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+    font-weight: bold;
+    background: none;
+    border: none;
+    outline: none;
+    justify-content: start;
+}
+
+.filter-header .toggle-section:focus {
+    box-shadow: none;
+    /* Remove focus outline */
+}
+
+.filter-header button::before {
+    content: "+";
+    /* Add the plus sign */
+    font-size: 16px;
+    color: var(--primary-text-color);
+    /* Bulma primary color */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    /* For smooth rotation animation */
+}
+
+.filter-header button.active::before {
+    content: "-";
+    /* Change to minus sign */
+    transform: rotate(0deg);
+    /* Keep it upright */
+}
+
+
+/* Style the list container */
+.checkbox-list {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+}
+
+/* Style each list item */
+.checkbox-list li {
+    margin-bottom: 10px;
+    /* Add spacing between items */
+    display: flex;
+    align-items: center;
+}
+
+/* Customize checkboxes */
+.checkbox-list input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--bulma-text);
+    /* Bulma primary color */
+
+    /* Add spacing between the checkbox and label */
+}
+
+/* Optional: Add hover effect */
+.checkbox-list li:hover {
+    font-weight: bolder;
+}
+
+
+/* Filter Drawer (Hidden by Default) */
+
+
+.filter-drawer.active {
+    transform: translateX(-100%);
+}
+
+/* Content above the button */
+.filter-content {
+    flex: 1;
+    /* Allow scrolling for this section */
+    overflow-y: auto;
+}
+
+/* Apply Filter Button */
+.filter-actions {
+    position: sticky;
+    bottom: 0;
+    margin-top: 20px;
+    padding: 10px;
+    z-index: 40;
+    background: var(--primary);
+    /* Optional shadow for better separation */
+}
+
+.filter-top-action {
+    position: sticky;
+    top: 32px;
+    z-index: 40;
+    padding: 10px;
+    background: var(--primary);
+}
+
+/* Mobile Icon */
+#filterIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px var(--sub-text-color);
+    z-index: 3;
+}
+
+.filter-section {
+    border-bottom: 1px solid var(--primary-text-color-less-opac);
+}
+
+/* Hide in desktop view */
+@media (min-width: 1024px) {
+    #filterIcon {
+        display: none;
+    }
+}
