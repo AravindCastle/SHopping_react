@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 
-const FilterDrawer = () => {
+const FilterDrawer = forwardRef((props, ref) => {
     const [filterVisible, setFilterVisible] = useState(false);
 
-    const toggleFilter = () => {
+    useImperativeHandle(ref, () => {
+        const toggleFilter = () => {
+            setFilterVisible(!filterVisible);
+        };
+    })
+    const toggleFilterChild = () => {
         setFilterVisible(!filterVisible);
     };
 
@@ -11,7 +16,7 @@ const FilterDrawer = () => {
         <div className={`column is-one-quarter filter-drawer ${filterVisible ? "active" : ""}`}>
             <div className="box">
                 <div className="filter-top-action">
-                    <button className="delete" id="closeFilterDrawer" onClick={toggleFilter}></button>
+                    <button className="delete is-hidden-desktop" id="closeFilterDrawer" onClick={toggleFilterChild}></button>
                     <h3 className="title is-5">Filters</h3>
                 </div>
                 <div className="filter-content">
@@ -43,6 +48,6 @@ const FilterDrawer = () => {
             </div>
         </div>
     );
-};
+});
 
 export default FilterDrawer;

@@ -242,6 +242,12 @@ body {
 
     #closeFilterDrawer {
         float: right;
+        display: block !important;
+    }
+
+    #filterIcon {
+        display: flex !important;
+
     }
 }
 
@@ -516,6 +522,10 @@ body {
     padding-left: 10px;
 }
 
+#closeFilterDrawer {
+    display: none;
+}
+
 .filter-content.is-hidden {
     display: none;
     /* Hide the content when collapsed */
@@ -642,15 +652,9 @@ body {
     align-items: center;
     box-shadow: 0 4px 6px var(--sub-text-color);
     z-index: 3;
+    display: none;
 }
 
 .filter-section {
     border-bottom: 1px solid var(--primary-text-color-less-opac);
-}
-
-/* Hide in desktop view */
-@media (min-width: 1024px) {
-    #filterIcon {
-        display: none;
-    }
 }
