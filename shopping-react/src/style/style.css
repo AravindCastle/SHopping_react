@@ -313,9 +313,14 @@ body {
 
 .sell-price {}
 
+.product-mask:hover {
+    transform: scale3d(1, 1, 1);
+}
+
 .product-mask {
     position: relative;
     cursor: pointer;
+    transform: scale3d(.7, .7, .7);
 }
 
 .product-mask .bottom-right {

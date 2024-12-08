@@ -2,7 +2,7 @@ import React from "react";
 
 const Product = ({ product }) => {
     let imageRatio = "mb-2 image is-square";
-    return (<div className="product-slide column is-one-quarter" key={product.id} >
+    return (<div className="product-slide column is-one-fifth" key={product.id} >
         <div className="product-mask">
             <div className="bottom-right">Best Sellers</div>
             <div className="top-right">30% Off</div>
